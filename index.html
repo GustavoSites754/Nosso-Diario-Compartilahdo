@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Diário Compartilahdo</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f2f0e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #b5838d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #6d6875;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            border-right: 1px solid #b5838d;
+        }
+
+        nav a:last-child {
+            border-right: none;
+        }
+
+        nav a:hover {
+            background-color: #b5838d;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            border: 2px solid #b5838d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h2 {
+            color: #6d6875;
+        }
+
+        .tab-content p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #6d6875;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+    </style>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";  
+            }
+            tablinks = document.getElementsByTagName("a");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        window.onload = function() {
+            document.getElementsByTagName("a")[0].click(); // Clicar na primeira aba automaticamente
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Nosso Diário Compartilahdo</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="openTab(event, 'casamento')">Casamento</a>
+        <a href="#" onclick="openTab(event, 'gabriela')">Gabriela Ferreira Carvalho Oliveira</a>
+        <a href="#" onclick="openTab(event, 'gustavo')">Gustavo Henrique de Oliveira Alves</a>
+    </nav>
+
+    <div class="container">
+        <!-- Seção Casamento -->
+        <div id="casamento" class="tab-content">
+            <h2>Casamento</h2>
+            <p>Hoje, vou escrever sobre o meu casamento. Foi um dos dias mais especiais da minha vida...</p>
+        </div>
+
+        <!-- Seção Gabriela Ferreira Carvalho Oliveira -->
+        <div id="gabriela" class="tab-content">
+            <h2>Gabriela Ferreira Carvalho Oliveira</h2>
+            <p>Aqui, vou contar histórias e momentos preciosos da minha vida depois de casada...</p>
+        </div>
+
+        <!-- Seção Gustavo Henrique de Oliveira Alves -->
+        <div id="gustavo" class="tab-content">
+            <h2>Gustavo Henrique de Oliveira Alves</h2>
+            <p>Esse é o inicio do meu diario, como vejo a vida depois de casado e como melhorou as coisas ou piorou, a verdade de como é um casamento na visão do homem...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Meu Diário Pessoal. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
